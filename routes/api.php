@@ -12,3 +12,7 @@ Route::post('login',[AuthController::class,'login']);
 Route::get('/user',[UserController::class,'index'])->middleware('auth:sanctum');
 
 Route::post('logout',[AuthController::class, 'logout'])->middleware('auth:sanctum');
+
+Route::get('/test', function () {
+    return response()->json(["message" => "API is working fine"]);
+});
